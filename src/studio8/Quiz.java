@@ -4,14 +4,19 @@ import java.util.Scanner;
 
 import support.cse131.NotYetImplementedException;
 
-public class Quiz {
-	
+public class Quiz{
+	private Question[] questions;
 	/**
 	 * Constructor
 	 * @param questions
 	 */
-	public Quiz(Question[] questions) {
-		throw new NotYetImplementedException();
+	public Quiz (Question[] q) {
+		//throw new NotYetImplementedException();
+		questions = q;
+	}
+	
+	public Question[] getQuestions() {
+		return questions;
 	}
 	
 	/**
@@ -30,7 +35,12 @@ public class Quiz {
 	 * @return int number of total points
 	 */
 	public int getTotalPoints() {
-		throw new NotYetImplementedException();
+		//throw new NotYetImplementedException();
+		int total = 0;
+		for(int i = 0; i<questions.length; i++) {
+			total += questions[i].getPoints();
+		}
+		return total;
 	}
 	
 	/**
@@ -41,7 +51,16 @@ public class Quiz {
 	 * @param in Scanner object to feed into getUserAnswer
 	 */
 	public void takeQuiz(Scanner in) {
-		throw new NotYetImplementedException();
+		//throw new NotYetImplementedException();
+		int t = 0;
+		for(int i = 0; i<questions.length; i++) {
+			questions[i].displayPrompt();
+			String a = "";
+			//a = this.getUserAnswer(in);
+			questions[i].checkAnswer(this.getUserAnswer(in));
+			
+			
+		}
 	}
 	
 	

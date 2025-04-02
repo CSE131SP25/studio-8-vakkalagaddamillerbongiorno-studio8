@@ -3,16 +3,26 @@ package studio8;
 import support.cse131.NotYetImplementedException;
 
 public class Question {
-	
+	private String prompt;
+	private String answer;
+	private int points;
 	/**
 	 * Constructor
 	 * @param prompt
 	 * @param answer
 	 * @param points
 	 */
-	public Question(String prompt, String answer, int points) {
-		throw new NotYetImplementedException();
+	public Question(String p, String a, int point) {
+		prompt= p;
+		answer = a;
+		points = point;
+		//throw new NotYetImplementedException();
 	}
+	
+	public String getPrompt() {
+		return prompt;
+	}
+	
 	
 	/**
 	 * Prints out the current question's prompt, with a parenthetical 
@@ -40,7 +50,7 @@ public class Question {
 	 * @return int points
 	 */
 	public int getPoints() {
-		throw new NotYetImplementedException();
+		return points;
 	}
 	
 	/**
@@ -48,10 +58,11 @@ public class Question {
 	 * @return String answer
 	 */
 	public String getAnswer() {
-		throw new NotYetImplementedException();
+		return answer;
 	}
 	
 	public static void main(String[] args) {
 		// TODO: Create a Question object of your own!
+		Question q1  = new Question("What is the capital of Missouri?", "Springfield", 5);
 	}
 }
